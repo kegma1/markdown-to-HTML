@@ -10,7 +10,7 @@ func TestH1(t *testing.T) {
 	msg := "Hallo verden"
 	
 	html, err := markdowntohtml.Md2html(fmt.Sprintf("# %s", msg))
-
+	
 	if err != nil {
 		t.Error(err)
 		return
@@ -20,4 +20,9 @@ func TestH1(t *testing.T) {
 		t.Log(html)
 		t.Fail()
 	}
+}
+
+func TestMultiline(t *testing.T) {
+	msg := "Hallo\nVerden\ner\nmin"
+	markdowntohtml.Md2html(msg)
 }
